@@ -2,7 +2,10 @@ import React from 'react';
 import './Users.css'
 
 const Users = (props) => {
-    const {name,balance,gender,age,company,email}=props.user
+    const {name,balance,gender,age,company,email,id}=props.user
+    const profile = (id) =>{
+        console.log('item add', id);
+    }
     return (
         <div className='user-div'>
             <p>Name : <b>{name}</b> </p>
@@ -11,6 +14,7 @@ const Users = (props) => {
             <p>Age : <b>{age}</b> </p>
             <p>Email : <b>{company}</b> </p>
             <p>Company : <b>{email}</b> </p>
+            <button onClick={()=>profile(id)}>Profile</button>
             
         </div>
     );

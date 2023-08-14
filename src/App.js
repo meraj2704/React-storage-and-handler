@@ -22,7 +22,7 @@ function App() {
       <h1>Users Information</h1>
       {
         users.map(user=> <Users
-        id={user.id}
+        key={user.id}
         user={user}
         ></Users>)
       }

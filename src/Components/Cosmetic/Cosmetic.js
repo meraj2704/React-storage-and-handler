@@ -2,7 +2,7 @@ import React from 'react';
 import './Cosmetic.css'
 
 const Cosmetic = (props) => {
-    const {id, name, price} = props.cosmetic;
+    const { name, price} = props.cosmetic;
     return (
         <div className='cos-div'>
             
