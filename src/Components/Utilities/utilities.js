@@ -49,4 +49,23 @@ const addToCart = id =>{
     //convert object to string and store in local storage
     localStorage.setItem('shoping-cart', JSON.stringify(shopingCart));
 }
-export {add, multifly, sub, divide, showProfile, addToCart};
+const removeFromDb= id =>
+{
+    const storeCart = localStorage.getItem('shoping-cart');
+    if(storeCart)
+    {
+        const shopingCart = JSON.parse(storeCart);
+        if(id in shopingCart){
+            delete shopingCart[id];
+            localStorage.setItem('shoping-cart', JSON.stringify(shopingCart));
+        }
+    }
+}
+export {
+    add,
+    multifly,
+    sub, divide,
+    showProfile,
+    addToCart,
+    removeFromDb
+};
