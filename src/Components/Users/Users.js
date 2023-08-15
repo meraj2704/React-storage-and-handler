@@ -1,10 +1,11 @@
 import React from 'react';
 import './Users.css'
+import { showProfile } from '../Utilities/utilities';
 
 const Users = (props) => {
     const {name,balance,gender,age,company,email,id}=props.user
     const profile = (id) =>{
-        console.log('item add', id);
+        showProfile(id);
     }
     return (
         <div className='user-div'>
