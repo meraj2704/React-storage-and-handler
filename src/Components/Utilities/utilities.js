@@ -23,4 +23,30 @@ const showProfile= id =>{
         alert('New item add');
     }
 }
-export {add, multifly, sub, divide, showProfile};
+const addToCart = id =>{
+    let shopingCart;
+    //get store cart from storage
+    const storeCart = localStorage.getItem('shoping-cart');
+    //strirng parse to object
+    if(storeCart)
+    {
+        shopingCart = JSON.parse(storeCart);
+    }
+    else{
+        shopingCart = {};
+    }
+    //add quantity
+    const quan = shopingCart[id];
+    if(quan)
+    {
+        const newQuan = quan + 1;
+        shopingCart[id] = newQuan;
+    }
+    else
+    {
+        shopingCart[id] = 1;
+    }
+    //convert object to string and store in local storage
+    localStorage.setItem('shoping-cart', JSON.stringify(shopingCart));
+}
+export {add, multifly, sub, divide, showProfile, addToCart};
